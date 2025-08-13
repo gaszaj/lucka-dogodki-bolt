@@ -1,0 +1,45 @@
+---
+// Schema.org structured data component
+interface Props {
+  type?: string;
+  name?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const { 
+  type = "Organization", 
+  name = "Lucka Eventi", 
+  description = "Organizacija dogodkov, izposoja in prodaja opreme za poroke, rojstne dneve in otroška praznovanca v Sloveniji.",
+  image = "/logos/lucka-logo.png",
+  url = Astro.url.href 
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": type,
+  "name": name,
+  "description": description,
+  "image": image,
+  "url": url,
+  ...(type === "Organization" && {
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SI",
+      "addressLocality": "Ljubljana"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+386-40-123-456",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/luckaeventi",
+      "https://www.instagram.com/luckaeventi"
+    ]
+  })
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>

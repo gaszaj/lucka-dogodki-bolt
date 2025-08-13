@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/baseLayout.astro';
+---
+
+<BaseLayout 
+  title="Kontakt - Lucka Eventi" 
+  description="Kontaktirajte nas za organizacijo vašega dogodka. Odzovemo se v 24 urah. Telefon, email, naslov."
+>
+  <div class="contact-page">
+    <div class="container">
+      <div class="contact-header">
+        <h1>Kontaktirajte nas</h1>
+        <p>Pripravljeni smo pomagati pri organizaciji vašega nepozabnega dogodka. Kontaktirajte nas še danes!</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <form class="contact-form" action="/thankYou" method="POST">
+            <div class="form-group">
+              <label for="name">Ime in priimek *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+              <label for="event-type">Vrsta dogodka</label>
+              <select id="event-type" name="event-type">
+                <option value="">Izberite vrsto dogodka</option>
+                <option value="poroka">Poroka</option>
+                <option value="rojstni-dan">Rojstni dan</option>
+                <option value="otrosko-praznovanje">Otroško praznovanca</option>
+                <option value="poslovno">Poslovni dogodek</option>
+                <option value="drugo">Drugo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Želeni datum dogodka</label>
+              <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Število gostov</label>
+              <select id="guests" name="guests">
+                <option value="">Izberite število gostov</option>
+                <option value="do-20">Do 20 gostov</option>
+                <option value="21-50">21-50 gostov</option>
+                <option value="51-100">51-100 gostov</option>
+                <option value="101-200">101-200 gostov</option>
+                <option value="nad-200">Nad 200 gostov</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Predvideni proračun</label>
+              <select id="budget" name="budget">
+                <option value="">Izberite proračun</option>
+                <option value="do-1000">Do 1.000 €</option>
+                <option value="1000-3000">1.000 € - 3.000 €</option>
+                <option value="3000-5000">3.000 € - 5.000 €</option>
+                <option value="5000-10000">5.000 € - 10.000 €</option>
+                <option value="nad-10000">Nad 10.000 €</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Opis dogodka / Dodatne informacije</label>
+              <textarea id="message" name="message" rows="5" placeholder="Opišite vaše želje in pričakovanja..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="privacy" required>
+                Strinjam se z <a href="/privacy-policy" target="_blank">obdelavo osebnih podatkov</a> *
+              </label>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="newsletter">
+                Želim prejemati novice in ponudbe po e-pošti
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Pošlji povpraševanje</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Kontaktni podatki</h3>
+            <div class="contact-item">
+              <strong>Telefon:</strong>
+              <a href="tel:+38640123456">+386 40 123 456</a>
+            </div>
+            <div class="contact-item">
+              <strong>Email:</strong>
+              <a href="mailto:info@lucka-eventi.si">info@lucka-eventi.si</a>
+            </div>
+            <div class="contact-item">
+              <strong>Naslov:</strong>
+              <p>Trubarjeva cesta 50<br>1000 Ljubljana, Slovenija</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Delovni čas</h3>
+            <div class="working-hours">
+              <div class="day-hours">
+                <span>Ponedeljek - Petek:</span>
+                <span>9:00 - 18:00</span>
+              </div>
+              <div class="day-hours">
+                <span>Sobota:</span>
+                <span>10:00 - 14:00</span>
+              </div>
+              <div class="day-hours">
+                <span>Nedelja:</span>
+                <span>Zaprto</span>
+              </div>
+              <p><small>* Za nujne primere smo dosegljivi tudi izven delovnega časa</small></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Sledite nam</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/luckaeventi" target="_blank">Facebook</a>
+              <a href="https://www.instagram.com/luckaeventi" target="_blank">Instagram</a>
+              <a href="https://www.youtube.com/luckaeventi" target="_blank">YouTube</a>
+            </div>
+          </div>
+
+          <div class="response-time">
+            <div class="response-badge">
+              <span class="badge-icon">⚡</span>
+              <div>
+                <strong>Hitra odzivnost</strong>
+                <p>Odgovarjamo v 24 urah</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+
+  .contact-header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-form {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-weight: normal !important;
+    cursor: pointer;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover {
+    background: #1d4ed8;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .contact-card h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .contact-item {
+    margin-bottom: 1rem;
+  }
+
+  .contact-item strong {
+    display: block;
+    color: #374151;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-item a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  .working-hours {
+    font-size: 0.875rem;
+  }
+
+  .day-hours {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-links a {
+    color: #2563eb;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: background 0.2s;
+  }
+
+  .social-links a:hover {
+    background: #eff6ff;
+    text-decoration: underline;
+  }
+
+  .response-time {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .response-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .badge-icon {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .contact-header h1 {
+      font-size: 2rem;
+    }
+
+    .contact-form {
+      padding: 1.5rem;
+    }
+  }
+</style>

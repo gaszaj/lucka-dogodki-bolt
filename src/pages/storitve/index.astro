@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../../layouts/baseLayout.astro';
+---
+
+<BaseLayout 
+  title="Storitve - Organizacija dogodkov | Lucka Eventi" 
+  description="Celostne storitve organizacije dogodkov: poroke, rojstni dnevi, otroška praznovanca, poslovni dogodki. Strokovna ekipa za nepozaben dogodek."
+>
+  <div class="services-page">
+    <div class="container">
+      <div class="page-header">
+        <div class="breadcrumb">
+          <a href="/">Domov</a> &gt; <span>Storitve</span>
+        </div>
+        <h1>Naše storitve</h1>
+        <p>Ponujamo celostne storitve organizacije dogodkov za vse priložnosti. Od načrtovanja do izvedbe poskrbimo za vsak detajl vašega nepozabnega dogodka.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card featured">
+          <div class="service-image">
+            <img src="/images/storitve/poroke.jpg" alt="Organizacija porok">
+          </div>
+          <div class="service-content">
+            <div class="service-badge">Najpopularnejše</div>
+            <h2>Organizacija porok</h2>
+            <p>Celostna organizacija poroke od prvega srečanja do poročnega plesa. Poskrbimo za vse - od lokacije, dekoracije, catertinga do koordinacije na dan poroke.</p>
+            <ul class="service-features">
+              <li>Načrtovanje in koordinacija</li>
+              <li>Izbira lokacije in dekoracije</li>
+              <li>Organizacija catertinga</li>
+              <li>Koordinacija dobaviteljev</li>
+              <li>Vodenje na dan poroke</li>
+            </ul>
+            <div class="service-price">Od €1.500,00</div>
+            <div class="service-actions">
+              <a href="/storitve/organizacija-porok" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('poroka-storitev')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/storitve/rojstni-dnevi.jpg" alt="Rojstni dnevi">
+          </div>
+          <div class="service-content">
+            <h3>Rojstni dnevi</h3>
+            <p>Organizacija rojstnih dni za odrasle in otroke. Prilagodimo se vašim željam in ustvarimo nepozaben praznik.</p>
+            <ul class="service-features">
+              <li>Tematski rojstni dnevi</li>
+              <li>Animacija za otroke</li>
+              <li>Catering in torte</li>
+              <li>Dekoracija prostora</li>
+              <li>Koordinacija dogodka</li>
+            </ul>
+            <div class="service-price">Od €300,00</div>
+            <div class="service-actions">
+              <a href="/storitve/rojstni-dnevi" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('rojstni-dan-storitev')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/storitve/otroska-praznovanja.jpg" alt="Otroška praznovanca">
+          </div>
+          <div class="service-content">
+            <h3>Otroška praznovanca</h3>
+            <p>Čarobni dogodki za najmlajše s profesionalno animacijo, kreativnimi delavnicami in prilagojenim cateringom.</p>
+            <ul class="service-features">
+              <li>Animacija in zabavni program</li>
+              <li>Kreativne delavnice</li>
+              <li>Tematske dekoracije</li>
+              <li>Otroški catering</li>
+              <li>Organizacija iger</li>
+            </ul>
+            <div class="service-price">Od €250,00</div>
+            <div class="service-actions">
+              <a href="/storitve/otroska-praznovanja" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('otroski-event-storitev')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/storitve/poslovni-eventi.jpg" alt="Poslovni dogodki">
+          </div>
+          <div class="service-content">
+            <h3>Poslovni dogodki</h3>
+            <p>Profesionalna organizacija poslovnih dogodkov, konferenc, teambuilding dogodkov in predstavitev.</p>
+            <ul class="service-features">
+              <li>Konference in seminarji</li>
+              <li>Teambuilding eventi</li>
+              <li>Predstavitve produktov</li>
+              <li>Poslovna srečanja</li>
+              <li>Networking dogodki</li>
+            </ul>
+            <div class="service-price">Na povpraševanje</div>
+            <div class="service-actions">
+              <a href="/storitve/poslovni-dogodki" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('poslovni-event-storitev')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/storitve/obletnice.jpg" alt="Obletnice">
+          </div>
+          <div class="service-content">
+            <h3>Obletnice in jubileji</h3>
+            <p>Praznovanje pomembnih življenjskih mejnikov z elegantno in premišljeno organizacijo.</p>
+            <ul class="service-features">
+              <li>Poročne obletnice</li>
+              <li>Okrogli rojstni dnevi</li>
+              <li>Poslovni jubileji</li>
+              <li>Družinske obletnice</li>
+              <li>Spominski dogodki</li>
+            </ul>
+            <div class="service-price">Od €400,00</div>
+            <div class="service-actions">
+              <a href="/storitve/obletnice" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('obletnica-storitev')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/storitve/dodatne-storitve.jpg" alt="Dodatne storitve">
+          </div>
+          <div class="service-content">
+            <h3>Dodatne storitve</h3>
+            <p>Specializirane storitve ki dopolnijo vaš dogodek: fotografiranje, ozvočevanje, transport in druge.</p>
+            <ul class="service-features">
+              <li>Fotografiranje in videografija</li>
+              <li>Ozvočevanje in osvetlitev</li>
+              <li>Transport gostov</li>
+              <li>Varstvo otrok</li>
+              <li>Čiščenje po dogodku</li>
+            </ul>
+            <div class="service-price">Na povpraševanje</div>
+            <div class="service-actions">
+              <a href="/storitve/dodatne-storitve" class="btn btn-primary">Več o storitvi</a>
+              <button class="btn btn-secondary" onclick="addToCart('dodatne-storitve')">Dodaj v košarico</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-choose-us">
+        <h2>Zakaj izbrati naše storitve?</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">🎯</div>
+            <h4>Personalizirane rešitve</h4>
+            <p>Vsak dogodek prilagodimo vašim željam, potrebam in proračunu</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">👥</div>
+            <h4>Izkušena ekipa</h4>
+            <p>Strokovna ekipa z več kot 10 leti izkušenj pri organizaciji dogodkov</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">🔧</div>
+            <h4>Celostna rešitev</h4>
+            <p>Od načrtovanja do izvedbe poskrbimo za vse, kar potrebujete</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">💎</div>
+            <h4>Kakovost</h4>
+            <p>Sodelujemo le z najboljšimi ponudniki in uporabljamo kakovostno opremo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  function addToCart(serviceId) {
+    // Simple cart functionality
+    alert(`Storitev ${serviceId} je bila dodana v košarico. To je demonstracija - v pravi implementaciji bi shranili podatke v košarico.`);
+    
+    // In real implementation, this would add to cart and possibly show confirmation
+    // window.location.href = '/cart?added=' + serviceId;
+  }
+</script>
+
+<style>
+  .services-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 1rem;
+    color: #6b7280;
+  }
+
+  .breadcrumb a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .service-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .service-image {
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .featured .service-image {
+    height: 400px;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 2rem;
+    position: relative;
+  }
+
+  .service-badge {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    background: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .service-content h2 {
+    font-size: 1.75rem;
+    color: #1f2937;
+    margin: 0 0 1rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin: 0 0 1rem;
+  }
+
+  .service-content p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    font-size: 0.875rem;
+  }
+
+  .service-features li:before {
+    content: '✓';
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .service-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-size: 0.875rem;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+  }
+
+  .btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+  }
+
+  .why-choose-us {
+    background: #f9fafb;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+  }
+
+  .why-choose-us h2 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 3rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .benefit {
+    text-align: center;
+  }
+
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit h4 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .service-card.featured {
+      grid-column: span 1;
+      display: block;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .service-actions {
+      justify-content: center;
+    }
+
+    .why-choose-us {
+      padding: 2rem 1rem;
+    }
+  }
+</style>

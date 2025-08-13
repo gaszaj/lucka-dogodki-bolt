@@ -1,0 +1,90 @@
+---
+// Header component for lucka-dogodki website
+---
+
+<header>
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <h1>Lucka Eventi</h1>
+      </a>
+      
+      <div class="nav-links">
+        <a href="/storitve">Storitve</a>
+        <a href="/izposoja">Izposoja</a>
+        <a href="/izdelki">Izdelki</a>
+        <a href="/paketi">Paketi</a>
+        <a href="/galerija">Galerija</a>
+        <a href="/clanki">Članki</a>
+        <a href="/contactUs">Kontakt</a>
+        <a href="/cart" class="cart-link">Košarica</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h1 {
+    color: #2563eb;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #2563eb;
+  }
+
+  .cart-link {
+    background: #2563eb;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+  }
+
+  .cart-link:hover {
+    background: #1d4ed8 !important;
+  }
+
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 1rem;
+    }
+    
+    .nav-links {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+</style>

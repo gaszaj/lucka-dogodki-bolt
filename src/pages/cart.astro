@@ -1,0 +1,485 @@
+---
+import BaseLayout from '../layouts/baseLayout.astro';
+---
+
+<BaseLayout title="Košarica - Lucka Eventi" description="Pregled izdelkov v košarici. Dokončajte nakup ali povpraševanje za izbrane storitve in izdelke.">
+  <div class="cart-page">
+    <div class="container">
+      <div class="cart-header">
+        <h1>Vaša košarica</h1>
+        <p>Pregled izbranih storitev in izdelkov</p>
+      </div>
+
+      <div class="cart-content">
+        <!-- Empty cart state -->
+        <div id="empty-cart" class="empty-cart">
+          <div class="empty-cart-content">
+            <div class="empty-cart-icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="m1 1 4 4 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <h2>Vaša košarica je prazna</h2>
+            <p>Dodajte storitve ali izdelke v košarico in nato dokončajte povpraševanje.</p>
+            <div class="empty-cart-actions">
+              <a href="/storitve" class="btn btn-primary">Preglej storitve</a>
+              <a href="/izdelki" class="btn btn-secondary">Preglej izdelke</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart with items (hidden by default) -->
+        <div id="cart-with-items" class="cart-with-items" style="display: none;">
+          <div class="cart-items">
+            <div class="cart-item">
+              <div class="item-image">
+                <img src="/products/s/sample-product.jpg" alt="Izdelek">
+              </div>
+              <div class="item-details">
+                <h3>Organizacija poroke</h3>
+                <p>Celostna organizacija poroke za do 100 gostov</p>
+                <div class="item-meta">
+                  <span class="item-type">Storitev</span>
+                </div>
+              </div>
+              <div class="item-price">
+                <span class="price">Na povpraševanje</span>
+              </div>
+              <div class="item-actions">
+                <button class="remove-btn" onclick="removeItem(1)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6 6 18M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <div class="item-image">
+                <img src="/products/s/dekoracija.jpg" alt="Dekoracija">
+              </div>
+              <div class="item-details">
+                <h3>Cvetlična dekoracija</h3>
+                <p>Cvetlična dekoracija miz in prostora</p>
+                <div class="item-meta">
+                  <span class="item-type">Izposoja</span>
+                  <span class="item-quantity">Količina: 10 kosov</span>
+                </div>
+              </div>
+              <div class="item-price">
+                <span class="price">€150,00</span>
+              </div>
+              <div class="item-actions">
+                <button class="remove-btn" onclick="removeItem(2)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6 6 18M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-summary">
+            <div class="summary-card">
+              <h3>Povzetek</h3>
+              
+              <div class="summary-line">
+                <span>Storitve:</span>
+                <span>Na povpraševanje</span>
+              </div>
+              <div class="summary-line">
+                <span>Izposoja/Izdelki:</span>
+                <span>€150,00</span>
+              </div>
+              <div class="summary-line total">
+                <span><strong>Skupno:</strong></span>
+                <span><strong>€150,00 + storitve</strong></span>
+              </div>
+
+              <div class="summary-note">
+                <p><small>* Končno ceno bomo določili po opravljenem pogovoru glede na vaše želje in obseg storitev.</small></p>
+              </div>
+
+              <div class="summary-actions">
+                <a href="/contactUs?cart=true" class="btn btn-primary btn-full">Pošlji povpraševanje</a>
+                <a href="/storitve" class="btn btn-secondary btn-full">Dodaj več storitev</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recommendations">
+        <h2>Morda vas tudi zanima</h2>
+        <div class="recommendations-grid">
+          <div class="recommendation-card">
+            <img src="/products/s/torte.jpg" alt="Poročne torte">
+            <h4>Poročne torte</h4>
+            <p>Ručno izdelane torte za vaš posebni dan</p>
+            <a href="/izdelki/porocne-torte">Več informacij</a>
+          </div>
+          <div class="recommendation-card">
+            <img src="/products/s/fotografiranje.jpg" alt="Fotografiranje">
+            <h4>Fotografiranje</h4>
+            <p>Profesionalno fotografiranje dogodkov</p>
+            <a href="/storitve/fotografiranje">Več informacij</a>
+          </div>
+          <div class="recommendation-card">
+            <img src="/products/s/zvocniki.jpg" alt="Ozvočevanje">
+            <h4>Ozvočevanje</h4>
+            <p>Kakovostna oprema za ozvočevanje</p>
+            <a href="/izposoja/ozvocevanje">Več informacij</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Simple cart functionality
+  function removeItem(itemId) {
+    // Here you would typically remove from a more sophisticated cart system
+    const cartItem = document.querySelector(`[data-item-id="${itemId}"]`) || 
+                     document.querySelector(`.cart-item:nth-child(${itemId})`);
+    
+    if (cartItem) {
+      cartItem.remove();
+    }
+
+    // Check if cart is empty
+    const remainingItems = document.querySelectorAll('.cart-item');
+    if (remainingItems.length === 0) {
+      document.getElementById('cart-with-items').style.display = 'none';
+      document.getElementById('empty-cart').style.display = 'block';
+    }
+  }
+
+  // Show cart with items on page load (for demo)
+  // In real implementation, this would check actual cart state
+  document.addEventListener('DOMContentLoaded', function() {
+    // Simulate having items in cart
+    const hasItems = new URLSearchParams(window.location.search).get('demo') === 'true';
+    
+    if (hasItems) {
+      document.getElementById('empty-cart').style.display = 'none';
+      document.getElementById('cart-with-items').style.display = 'block';
+    }
+  });
+</script>
+
+<style>
+  .cart-page {
+    padding: 2rem 0 4rem;
+    min-height: 60vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .cart-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .cart-header h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-header p {
+    color: #6b7280;
+    font-size: 1.125rem;
+  }
+
+  /* Empty cart styles */
+  .empty-cart {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .empty-cart-icon {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+  }
+
+  .empty-cart-content h2 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+
+  .empty-cart-content p {
+    color: #6b7280;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .empty-cart-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Cart with items */
+  .cart-with-items {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cart-item {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .item-details h3 {
+    margin: 0 0 0.5rem;
+    color: #1f2937;
+  }
+
+  .item-details p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .item-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .item-type {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+  }
+
+  .item-quantity {
+    color: #6b7280;
+  }
+
+  .item-price .price {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .remove-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .remove-btn:hover {
+    background: #fecaca;
+  }
+
+  /* Cart summary */
+  .summary-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .summary-card h3 {
+    margin: 0 0 1.5rem;
+    color: #1f2937;
+  }
+
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .summary-line.total {
+    border-bottom: 2px solid #1f2937;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .summary-note {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .summary-note p {
+    margin: 0;
+    color: #92400e;
+  }
+
+  .summary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+  }
+
+  .btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+  }
+
+  /* Recommendations */
+  .recommendations {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid #e5e7eb;
+  }
+
+  .recommendations h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2937;
+  }
+
+  .recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .recommendation-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+
+  .recommendation-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .recommendation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .recommendation-card h4,
+  .recommendation-card p,
+  .recommendation-card a {
+    padding: 0 1.5rem;
+  }
+
+  .recommendation-card h4 {
+    margin: 1rem 0 0.5rem;
+    color: #1f2937;
+  }
+
+  .recommendation-card p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .recommendation-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding-bottom: 1.5rem;
+  }
+
+  .recommendation-card a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .cart-with-items {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .cart-item {
+      grid-template-columns: 60px 1fr auto;
+      gap: 0.75rem;
+    }
+
+    .item-actions {
+      grid-column: span 3;
+      text-align: right;
+    }
+
+    .summary-card {
+      position: static;
+    }
+  }
+</style>

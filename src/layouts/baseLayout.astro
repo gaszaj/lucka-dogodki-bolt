@@ -1,0 +1,72 @@
+---
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import Cookies from '../components/cookies.astro';
+import Schema from '../components/schema.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  schemaType?: string;
+}
+
+const { 
+  title = "Lucka Eventi - Organizacija dogodkov v Sloveniji",
+  description = "Profesionalna organizacija porok, rojstnih dni in otroških praznovanj. Izposoja in prodaja opreme za dogodke. Pošljemo po vsej Sloveniji.",
+  image = "/ogimages/oghome/default.jpg",
+  schemaType = "Organization"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="sl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content="Lucka Eventi" />
+    <meta property="og:locale" content="sl_SI" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Lucka Eventi" />
+    <meta name="language" content="Slovenian" />
+    
+    <!-- Structured Data -->
+    <Schema type={schemaType} name={title} description={description} image={image} />
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/global.css" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <Cookies />
+  </body>
+</html>

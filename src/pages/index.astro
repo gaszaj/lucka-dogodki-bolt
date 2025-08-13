@@ -1,0 +1,597 @@
+---
+import BaseLayout from '../layouts/baseLayout.astro';
+---
+
+<BaseLayout title="Lucka Eventi - Turn Your Event into an Unforgettable Experience">
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-br from-background to-cream min-h-screen flex items-center">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Side - Content -->
+        <div class="hero-content">
+          <h1 class="h1 text-brand mb-6">
+            Turn Your Event into an Unforgettable Experience
+          </h1>
+          <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+            We provide everything for weddings and special moments - from premium equipment to professional entertainment. Let us handle the details while you create memories.
+          </p>
+          
+          <!-- Key Benefits -->
+          <div class="benefits-grid grid gap-4 mb-8">
+            <div class="benefit-item flex items-center gap-3">
+              <div class="benefit-icon w-12 h-12 bg-terracotta rounded-xl flex items-center justify-center text-white text-xl">
+                🎯
+              </div>
+              <span class="font-medium">Personalized planning for every occasion</span>
+            </div>
+            <div class="benefit-item flex items-center gap-3">
+              <div class="benefit-icon w-12 h-12 bg-tertiary rounded-xl flex items-center justify-center text-tertiary-foreground text-xl">
+                ⚡
+              </div>
+              <span class="font-medium">All-in-one solution - no stress, no hassle</span>
+            </div>
+            <div class="benefit-item flex items-center gap-3">
+              <div class="benefit-icon w-12 h-12 bg-quaternary rounded-xl flex items-center justify-center text-quaternary-foreground text-xl">
+                💎
+              </div>
+              <span class="font-medium">Premium quality equipment and service</span>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="hero-cta mb-6">
+            <button onclick="scrollToOfferings()" class="btn btn-primary btn-lg">
+              Start Planning
+            </button>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="social-proof bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-border">
+            <p class="text-sm font-medium text-brand">
+              🎉 Join 150+ happy couples and organizers who have trusted us in the last year!
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side - Video -->
+        <div class="hero-video">
+          <div class="video-container bg-card rounded-2xl overflow-hidden shadow-hover border border-border">
+            <div class="aspect-video bg-gradient-to-br from-terracotta/20 to-quaternary/20 flex items-center justify-center">
+              <div class="text-center">
+                <div class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <svg class="w-8 h-8 text-brand ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <p class="text-muted-foreground">Video montage showcasing joyful moments</p>
+                <p class="text-sm text-muted-foreground mt-2">from our past events</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Point Section -->
+  <section class="pain-point-section section bg-cream">
+    <div class="container-narrow text-center">
+      <h2 class="h2 text-brand mb-4">
+        There's an easier way to avoid a boring party
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Lučka Dogodki ensures your guests will be talking about your event for years to come!
+      </p>
+      
+      <!-- Comparison Graphic -->
+      <div class="comparison-graphic grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="stress-side bg-destructive/10 rounded-2xl p-6 border border-destructive/20">
+          <div class="text-4xl mb-4">😰</div>
+          <h4 class="font-semibold text-destructive mb-2">Stressful Organization</h4>
+          <p class="text-sm text-muted-foreground">Endless coordination, forgotten details, worried guests</p>
+        </div>
+        <div class="joy-side bg-terracotta/10 rounded-2xl p-6 border border-terracotta/20">
+          <div class="text-4xl mb-4">🎉</div>
+          <h4 class="font-semibold text-terracotta mb-2">Joyful Celebration</h4>
+          <p class="text-sm text-muted-foreground">Seamless experience, happy memories, unforgettable moments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Offerings Section -->
+  <section id="offerings" class="offerings-section section">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="h2 text-brand mb-4">Everything You Need for Your Perfect Event</h2>
+        <p class="text-xl text-muted-foreground">Choose from our three main categories</p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="offering-category mb-16">
+        <div class="category-header text-center mb-8">
+          <h3 class="h3 text-brand mb-2">Services</h3>
+          <p class="text-muted-foreground">Complete event planning and coordination</p>
+        </div>
+        <div class="items-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-terracotta/20 to-terracotta/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">💒</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Wedding Planning</h4>
+            <p class="text-sm text-muted-foreground mb-4">Complete wedding coordination from start to finish</p>
+            <div class="item-actions flex gap-2">
+              <a href="/storitve/wedding-planning" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('wedding-planning')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎂</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Birthday Parties</h4>
+            <p class="text-sm text-muted-foreground mb-4">Memorable birthday celebrations for all ages</p>
+            <div class="item-actions flex gap-2">
+              <a href="/storitve/birthday-parties" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('birthday-parties')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-quaternary/20 to-quaternary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎪</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Children's Events</h4>
+            <p class="text-sm text-muted-foreground mb-4">Fun and safe entertainment for kids</p>
+            <div class="item-actions flex gap-2">
+              <a href="/storitve/childrens-events" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('childrens-events')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rentals Section -->
+      <div class="offering-category mb-16">
+        <div class="category-header text-center mb-8">
+          <h3 class="h3 text-brand mb-2">Rentals</h3>
+          <p class="text-muted-foreground">Premium equipment and decorations</p>
+        </div>
+        <div class="items-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-terracotta/20 to-terracotta/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎵</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Sound Systems</h4>
+            <p class="text-sm text-muted-foreground mb-4">Professional audio equipment for any venue</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izposoja/sound-systems" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('sound-systems')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">💡</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Lighting</h4>
+            <p class="text-sm text-muted-foreground mb-4">Ambient and decorative lighting solutions</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izposoja/lighting" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('lighting')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-quaternary/20 to-quaternary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🪑</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Furniture</h4>
+            <p class="text-sm text-muted-foreground mb-4">Elegant tables, chairs, and lounge areas</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izposoja/furniture" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('furniture')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Section -->
+      <div class="offering-category mb-16">
+        <div class="category-header text-center mb-8">
+          <h3 class="h3 text-brand mb-2">Products</h3>
+          <p class="text-muted-foreground">Custom decorations and party supplies</p>
+        </div>
+        <div class="items-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-terracotta/20 to-terracotta/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🌸</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Floral Arrangements</h4>
+            <p class="text-sm text-muted-foreground mb-4">Fresh and artificial flower decorations</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izdelki/floral-arrangements" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('floral-arrangements')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎈</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Balloon Decorations</h4>
+            <p class="text-sm text-muted-foreground mb-4">Creative balloon arches and centerpieces</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izdelki/balloon-decorations" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('balloon-decorations')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+
+          <div class="item-card card card-hover p-6">
+            <div class="item-image bg-gradient-to-br from-quaternary/20 to-quaternary/10 rounded-xl h-48 mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎁</span>
+            </div>
+            <h4 class="font-semibold text-brand mb-2">Party Favors</h4>
+            <p class="text-sm text-muted-foreground mb-4">Personalized gifts and keepsakes</p>
+            <div class="item-actions flex gap-2">
+              <a href="/izdelki/party-favors" class="btn btn-outline-primary btn-sm flex-1">View Details</a>
+              <button onclick="addToInquiry('party-favors')" class="btn btn-terracotta btn-sm">Add to Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Banner -->
+  <section class="trending-banner bg-terracotta text-terracotta-foreground py-4">
+    <div class="container-wide">
+      <div class="flex items-center justify-center gap-4 text-center">
+        <span class="text-2xl">🔥</span>
+        <p class="font-medium">
+          <strong>Trending this week:</strong> Our 'Wedding' package with a photo box and music has already been booked for 7 upcoming weddings! Secure your date.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section section bg-cream">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="h2 text-brand mb-4">See Our Work in Action</h2>
+        <p class="text-xl text-muted-foreground">Real moments from real events</p>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-grid columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-terracotta/20 to-terracotta/10 rounded-2xl aspect-[4/5] flex items-center justify-center">
+            <span class="text-4xl">📸</span>
+          </div>
+        </div>
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-2xl aspect-square flex items-center justify-center">
+            <span class="text-4xl">💒</span>
+          </div>
+        </div>
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-quaternary/20 to-quaternary/10 rounded-2xl aspect-[3/4] flex items-center justify-center">
+            <span class="text-4xl">🎉</span>
+          </div>
+        </div>
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-terracotta/20 to-terracotta/10 rounded-2xl aspect-[4/3] flex items-center justify-center">
+            <span class="text-4xl">🌸</span>
+          </div>
+        </div>
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-2xl aspect-[5/4] flex items-center justify-center">
+            <span class="text-4xl">🎂</span>
+          </div>
+        </div>
+        <div class="gallery-item break-inside-avoid">
+          <div class="bg-gradient-to-br from-quaternary/20 to-quaternary/10 rounded-2xl aspect-square flex items-center justify-center">
+            <span class="text-4xl">🎈</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/galerija" class="btn btn-primary">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-section section">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="h2 text-brand mb-4">Why Choose Us?</h2>
+        <p class="text-xl text-muted-foreground">Four core values that set us apart</p>
+      </div>
+
+      <div class="values-grid grid md:grid-cols-2 gap-8">
+        <div class="value-item text-center">
+          <div class="value-icon w-16 h-16 bg-terracotta rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
+            👥
+          </div>
+          <h4 class="font-semibold text-brand mb-2">Personal Approach</h4>
+          <p class="text-muted-foreground">Every event is unique, and we tailor our services to your specific vision and needs.</p>
+        </div>
+
+        <div class="value-item text-center">
+          <div class="value-icon w-16 h-16 bg-tertiary rounded-2xl flex items-center justify-center text-tertiary-foreground text-2xl mx-auto mb-4">
+            🛡️
+          </div>
+          <h4 class="font-semibold text-brand mb-2">Reliability</h4>
+          <p class="text-muted-foreground">Count on us to deliver exactly what we promise, when we promise it.</p>
+        </div>
+
+        <div class="value-item text-center">
+          <div class="value-icon w-16 h-16 bg-quaternary rounded-2xl flex items-center justify-center text-quaternary-foreground text-2xl mx-auto mb-4">
+            🎯
+          </div>
+          <h4 class="font-semibold text-brand mb-2">All-in-One Convenience</h4>
+          <p class="text-muted-foreground">From planning to cleanup, we handle everything so you can focus on enjoying your event.</p>
+        </div>
+
+        <div class="value-item text-center">
+          <div class="value-icon w-16 h-16 bg-brand rounded-2xl flex items-center justify-center text-brand-foreground text-2xl mx-auto mb-4">
+            ⭐
+          </div>
+          <h4 class="font-semibold text-brand mb-2">High-Quality Equipment</h4>
+          <p class="text-muted-foreground">Professional-grade equipment and premium materials for flawless execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section section bg-cream">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="h2 text-brand mb-4">Our clients love us. And so does Google!</h2>
+        
+        <!-- Google Reviews Stats -->
+        <div class="google-stats bg-white rounded-2xl p-6 border border-border mb-8 inline-block">
+          <div class="flex items-center justify-center gap-4">
+            <div class="google-rating">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-3xl font-bold text-brand">4.9</span>
+                <div class="stars flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">Google Rating</p>
+            </div>
+            <div class="divider w-px h-12 bg-border"></div>
+            <div class="review-count">
+              <div class="text-3xl font-bold text-brand mb-2">127</div>
+              <p class="text-sm text-muted-foreground">Reviews</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="testimonials-grid grid md:grid-cols-2 gap-8">
+        <div class="testimonial-card bg-white rounded-2xl p-6 border border-border">
+          <div class="stars text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+          <blockquote class="text-muted-foreground mb-4">
+            "Lučka Eventi made our wedding absolutely perfect. Every detail was handled with care, and our guests are still talking about how amazing everything was!"
+          </blockquote>
+          <cite class="font-semibold text-brand">- Ana & Marko K.</cite>
+        </div>
+
+        <div class="testimonial-card bg-white rounded-2xl p-6 border border-border">
+          <div class="stars text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+          <blockquote class="text-muted-foreground mb-4">
+            "Professional, reliable, and creative. They transformed our venue into something magical. Highly recommend!"
+          </blockquote>
+          <cite class="font-semibold text-brand">- Petra S.</cite>
+        </div>
+
+        <div class="testimonial-card bg-white rounded-2xl p-6 border border-border">
+          <div class="stars text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+          <blockquote class="text-muted-foreground mb-4">
+            "The team went above and beyond for our company event. Everything was seamless and our clients were impressed."
+          </blockquote>
+          <cite class="font-semibold text-brand">- David M.</cite>
+        </div>
+
+        <div class="testimonial-card bg-white rounded-2xl p-6 border border-border">
+          <div class="stars text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+          <blockquote class="text-muted-foreground mb-4">
+            "Our daughter's birthday party was a dream come true. The kids had so much fun, and the parents were amazed by the organization."
+          </blockquote>
+          <cite class="font-semibold text-brand">- Maja T.</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section section">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="h2 text-brand mb-4">Frequently Asked Questions</h2>
+        <p class="text-xl text-muted-foreground">Get answers to common questions</p>
+      </div>
+
+      <div class="faq-accordion space-y-4">
+        <div class="faq-item border border-border rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left p-6 bg-card hover:bg-muted transition-colors flex justify-between items-center" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-brand">How far in advance should I book your services?</span>
+            <span class="faq-icon text-2xl">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+            We recommend booking at least 2-3 months in advance for weddings and major events, though we can often accommodate shorter notice depending on availability.
+          </div>
+        </div>
+
+        <div class="faq-item border border-border rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left p-6 bg-card hover:bg-muted transition-colors flex justify-between items-center" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-brand">Do you provide services outside of Ljubljana?</span>
+            <span class="faq-icon text-2xl">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+            Yes! We provide services throughout Slovenia. Additional travel fees may apply for locations outside the Ljubljana area.
+          </div>
+        </div>
+
+        <div class="faq-item border border-border rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left p-6 bg-card hover:bg-muted transition-colors flex justify-between items-center" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-brand">What's included in your event planning packages?</span>
+            <span class="faq-icon text-2xl">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+            Our packages include venue coordination, vendor management, timeline creation, setup and breakdown, and day-of coordination. Specific inclusions vary by package level.
+          </div>
+        </div>
+
+        <div class="faq-item border border-border rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left p-6 bg-card hover:bg-muted transition-colors flex justify-between items-center" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-brand">Can I rent equipment without full event planning?</span>
+            <span class="faq-icon text-2xl">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+            Absolutely! We offer equipment rental as a standalone service. Browse our rental catalog and add items to your inquiry for a custom quote.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta-section section bg-gradient-to-br from-brand to-brand/80 text-brand-foreground">
+    <div class="container-narrow text-center">
+      <h2 class="h2 text-white mb-4">Ready to build your dream event?</h2>
+      <p class="text-xl text-white/90 mb-8">
+        Start by exploring our offerings or review what you've already added to your inquiry
+      </p>
+
+      <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/cart" class="btn bg-white text-brand hover:bg-white/90 btn-lg" id="view-cart-btn">
+          View My Inquiry Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="/storitve" class="btn btn-outline border-white text-white hover:bg-white hover:text-brand btn-lg" id="start-exploring-btn">
+          Start Exploring Our Offerings
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Smooth scroll to offerings
+  function scrollToOfferings() {
+    document.getElementById('offerings')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+
+  // Simple inquiry cart functionality
+  let inquiryCart = JSON.parse(localStorage.getItem('inquiryCart') || '[]');
+
+  function addToInquiry(itemId) {
+    if (!inquiryCart.includes(itemId)) {
+      inquiryCart.push(itemId);
+      localStorage.setItem('inquiryCart', JSON.stringify(inquiryCart));
+      updateCartCount();
+      
+      // Show feedback
+      const button = event.target;
+      const originalText = button.textContent;
+      button.textContent = 'Added!';
+      button.classList.add('bg-tertiary', 'text-tertiary-foreground');
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('bg-tertiary', 'text-tertiary-foreground');
+      }, 1500);
+    }
+  }
+
+  function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    const viewCartBtn = document.getElementById('view-cart-btn');
+    const startExploringBtn = document.getElementById('start-exploring-btn');
+    
+    if (cartCount) {
+      cartCount.textContent = inquiryCart.length;
+    }
+    
+    // Show/hide buttons based on cart state
+    if (inquiryCart.length > 0) {
+      viewCartBtn?.classList.remove('hidden');
+      startExploringBtn?.classList.add('hidden');
+    } else {
+      viewCartBtn?.classList.add('hidden');
+      startExploringBtn?.classList.remove('hidden');
+    }
+  }
+
+  // FAQ toggle functionality
+  function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('.faq-icon');
+    
+    if (answer.classList.contains('hidden')) {
+      answer.classList.remove('hidden');
+      icon.textContent = '−';
+    } else {
+      answer.classList.add('hidden');
+      icon.textContent = '+';
+    }
+  }
+
+  // Initialize cart count on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    updateCartCount();
+  });
+</script>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--section-cream)) 100%);
+  }
+
+  .gallery-grid {
+    column-gap: 1.5rem;
+  }
+
+  .gallery-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-question:hover .faq-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  .testimonial-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.10);
+  }
+
+  .item-card:hover .item-image {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-item:hover .benefit-icon {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+
+  .value-item:hover .value-icon {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+</style>
